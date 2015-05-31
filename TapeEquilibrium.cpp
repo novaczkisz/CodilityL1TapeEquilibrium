@@ -21,7 +21,9 @@ int solution(vector<int> &A) {
     int min_diff = diff;
 
     for( int p = 1; p < (N-1); p++ ) {
-        diff = abs( diff - 2*A[p] );
+      lower_sum += A[p];
+      higher_sum -= A[p];
+      diff = abs( lower_sum - higher_sum );
 
         if( diff < min_diff ) {
              min_diff = diff;
